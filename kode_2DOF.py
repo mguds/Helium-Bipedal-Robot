@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 
 # Configuration for Raspberry Pi Flask server
-RASPBERRY_PI_IP = "192.168.50.177"
+RASPBERRY_PI_IP = ""
 SET_PARAMS_URL = f"http://{RASPBERRY_PI_IP}:5000/set_params"
 START_URL = f"http://{RASPBERRY_PI_IP}:5000/start"
 STOP_URL = f"http://{RASPBERRY_PI_IP}:5000/stop"
@@ -43,7 +43,7 @@ best_params = {
 
 # Motion Capture connection
 async def connect_mocap():
-    connection = await qtm_rt.connect("192.168.50.50")
+    connection = await qtm_rt.connect("")
     if connection is None:
         print("Could not connect to motion capture system")
         return None
