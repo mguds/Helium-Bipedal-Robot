@@ -11,14 +11,14 @@ from datetime import datetime
 import pandas as pd
 
 # Configuration for Flask-server
-RASPBERRY_PI_IP = "192.168.50.177"
+RASPBERRY_PI_IP = ""
 SET_PARAMS_URL = f"http://{RASPBERRY_PI_IP}:5000/set_params"
 START_URL = f"http://{RASPBERRY_PI_IP}:5000/start"
 STOP_URL = f"http://{RASPBERRY_PI_IP}:5000/stop"
 
 # MoCap
 async def connect_mocap():
-    connection = await qtm_rt.connect("192.168.50.50")
+    connection = await qtm_rt.connect("")
     if connection is None:
         print("Kunne ikke koble til motion capture-systemet")
         return None
